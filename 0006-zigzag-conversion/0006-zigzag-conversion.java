@@ -17,25 +17,24 @@ class Solution {
             while(index < s.length()){
                 boolean flag1 = true;
                 boolean flag2 = true;
-                if(first != 0 && index + first < s.length()){
-                    now += s.charAt(index + first);
-                    index += first;
+                if(index + first < s.length()){
+                    if(first != 0){
+                        now += s.charAt(index + first);
+                        index += first;
+                    }
                     flag1 = false;
                 }
-                if(first == 0 && index + first < s.length())
-                    flag1 = false;
                 if(flag1){
                     result += now;
                     break;
                 }
-                    
-                if(second != 0 && index + second < s.length()){
-                    now += s.charAt(index + second);
-                    index += second;
+                if(index + second < s.length()){
+                    if(second != 0){
+                        now += s.charAt(index + second);
+                        index += second;
+                    }
                     flag2 = false;
                 }
-                if(second == 0 && index + second < s.length())
-                    flag2 = false;
                 if(flag2){
                     result += now;
                     break;
@@ -43,8 +42,6 @@ class Solution {
             }
             first -= 2;
             second += 2;
-            if(first < 0)
-                break;
         }
         return result;
     }
