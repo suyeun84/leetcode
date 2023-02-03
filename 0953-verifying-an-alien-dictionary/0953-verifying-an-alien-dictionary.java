@@ -11,9 +11,7 @@ class Solution {
             int min = Math.min(words[i].length(), words[i+1].length());
             for(int j = 0; j < min + 1; j++){
                 if(j == min){
-                    if(words[i].length() == words[i+1].length()){
-                        break;
-                    }else if(words[i].length() > words[i+1].length()){
+                    if(words[i].length() > words[i+1].length()){
                         return false;
                     }else{
                         break;
