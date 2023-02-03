@@ -7,10 +7,9 @@ class Solution {
         }
         
         for(int i = 0; i < words.length - 1; i++){
+            
             int min = Math.min(words[i].length(), words[i+1].length());
             for(int j = 0; j < min + 1; j++){
-                boolean flag = false;
-                
                 if(j == min){
                     if(words[i].length() == words[i+1].length()){
                         break;
@@ -26,10 +25,8 @@ class Solution {
                 }else if(hashmap.get(words[i].charAt(j)) > hashmap.get(words[i+1].charAt(j))){
                     return false;
                 }else if(hashmap.get(words[i].charAt(j)) < hashmap.get(words[i+1].charAt(j))){
-                    flag = true;
-                }
-                if(flag)
                     break;
+                }
             }
         }
         return true;
