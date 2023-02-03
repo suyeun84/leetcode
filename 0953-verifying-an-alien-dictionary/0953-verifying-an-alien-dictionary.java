@@ -18,9 +18,7 @@ class Solution {
                     }
                 }
                 
-                if(hashmap.get(words[i].charAt(j)) == hashmap.get(words[i+1].charAt(j))){
-                    continue;
-                }else if(hashmap.get(words[i].charAt(j)) > hashmap.get(words[i+1].charAt(j))){
+                if(hashmap.get(words[i].charAt(j)) > hashmap.get(words[i+1].charAt(j))){
                     return false;
                 }else if(hashmap.get(words[i].charAt(j)) < hashmap.get(words[i+1].charAt(j))){
                     break;
