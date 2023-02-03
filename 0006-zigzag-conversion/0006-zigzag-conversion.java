@@ -1,47 +1,33 @@
 class Solution {
     public String convert(String s, int numRows) {
         
-        int first = numRows * 2 - 2;
-        int second = 0;
-        if(s.length() == 1)
-            return s;
-        if(numRows == 1)
-            return s;
-        if(s.length() <= numRows)
-            return s;
+        int num[] = new int[]{numRows * 2 - 2, 0};
         String result = "";
+        
+        if(s.length() == 1 || numRows == 1 || s.length() <= numRows)
+            return s;
+        
         for(int i = 0; i < numRows; i++){
             String now = "";
             int index = i;
             now += s.charAt(index);
+            Loop:
             while(index < s.length()){
-                boolean flag1 = true;
-                boolean flag2 = true;
-                if(index + first < s.length()){
-                    if(first != 0){
-                        now += s.charAt(index + first);
-                        index += first;
+
+                for(int j = 0; j < 2; j++){
+                    if(index + num[j] < s.length()){
+                        if(num[j] != 0){
+                            now += s.charAt(index + num[j]);
+                            index += num[j];
+                        }
+                    }else{
+                        result += now;
+                        break Loop;
                     }
-                    flag1 = false;
-                }
-                if(flag1){
-                    result += now;
-                    break;
-                }
-                if(index + second < s.length()){
-                    if(second != 0){
-                        now += s.charAt(index + second);
-                        index += second;
-                    }
-                    flag2 = false;
-                }
-                if(flag2){
-                    result += now;
-                    break;
                 }
             }
-            first -= 2;
-            second += 2;
+            num[0] -= 2;
+            num[1] += 2;
         }
         return result;
     }
