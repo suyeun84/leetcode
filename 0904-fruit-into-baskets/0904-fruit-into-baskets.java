@@ -2,7 +2,6 @@ class Solution {
     public int totalFruit(int[] fruits) {
         int max = 0;
         int startIndex = 0;
-        int endIndex = 0;
         HashMap<Integer, Integer> hashmap = new HashMap<>();
         
         for(int i = 0; i < fruits.length; i++){
