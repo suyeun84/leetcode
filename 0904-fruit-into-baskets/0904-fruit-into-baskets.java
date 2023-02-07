@@ -1,20 +1,21 @@
 class Solution {
     public int totalFruit(int[] fruits) {
         int max = 0;
-        int firstIndex = 0;
-        int secondIndex = 0;
+        int startIndex = 0;
+        int endIndex = 0;
         HashMap<Integer, Integer> hashmap = new HashMap<>();
         
-        while(secondIndex < fruits.length){
-            hashmap.put(fruits[secondIndex], hashmap.getOrDefault(fruits[secondIndex], 0) + 1);
-            secondIndex++;
-            while(hashmap.size() > 2 && firstIndex < secondIndex){
-                if(hashmap.get(fruits[firstIndex]) == 1)
-                    hashmap.remove(fruits[firstIndex]);
+        while(endIndex < fruits.length){
+            hashmap.put(fruits[endIndex], hashmap.getOrDefault(fruits[endIndex], 0) + 1);
+            endIndex++;
+            while(hashmap.size() > 2){
+                if(hashmap.get(fruits[startIndex]) == 1)
+                    hashmap.remove(fruits[startIndex]);
                 else
-                    hashmap.put(fruits[firstIndex], hashmap.get(fruits[firstIndex]) - 1);
-                firstIndex++;
+                    hashmap.put(fruits[startIndex], hashmap.get(fruits[startIndex]) - 1);
+                startIndex++;
             }
+            
             int pick = 0;
             for(int k : hashmap.keySet()){
                 pick += hashmap.get(k);
