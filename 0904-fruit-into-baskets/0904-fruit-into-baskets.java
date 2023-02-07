@@ -5,9 +5,8 @@ class Solution {
         int endIndex = 0;
         HashMap<Integer, Integer> hashmap = new HashMap<>();
         
-        while(endIndex < fruits.length){
-            hashmap.put(fruits[endIndex], hashmap.getOrDefault(fruits[endIndex], 0) + 1);
-            endIndex++;
+        for(int i = 0; i < fruits.length; i++){
+            hashmap.put(fruits[i], hashmap.getOrDefault(fruits[i], 0) + 1);
             while(hashmap.size() > 2){
                 if(hashmap.get(fruits[startIndex]) == 1)
                     hashmap.remove(fruits[startIndex]);
