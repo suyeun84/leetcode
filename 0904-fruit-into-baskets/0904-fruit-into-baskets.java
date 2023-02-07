@@ -4,8 +4,8 @@ class Solution {
         int startIndex = 0;
         HashMap<Integer, Integer> hashmap = new HashMap<>();
         
-        for(int i = 0; i < fruits.length; i++){
-            hashmap.put(fruits[i], hashmap.getOrDefault(fruits[i], 0) + 1);
+        for(int endIndex = 0; endIndex < fruits.length; endIndex++){
+            hashmap.put(fruits[endIndex], hashmap.getOrDefault(fruits[endIndex], 0) + 1);
             while(hashmap.size() > 2){
                 if(hashmap.get(fruits[startIndex]) == 1)
                     hashmap.remove(fruits[startIndex]);
