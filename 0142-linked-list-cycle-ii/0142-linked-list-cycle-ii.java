@@ -16,7 +16,7 @@ public class Solution {
         ListNode rabbit = head;
         ListNode turtle = head;
         
-        while(rabbit != null && turtle.next != null && rabbit.next != null){
+        while(rabbit != null && rabbit.next != null){
             rabbit = rabbit.next.next;
             turtle = turtle.next;
             
