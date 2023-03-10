@@ -15,7 +15,7 @@ public class Solution {
         //토끼와 거북이 알고리즘
         ListNode rabbit = head;
         ListNode turtle = head;
-        if(head == null) return null;
+        
         while(rabbit != null && turtle.next != null && rabbit.next != null){
             rabbit = rabbit.next.next;
             turtle = turtle.next;
