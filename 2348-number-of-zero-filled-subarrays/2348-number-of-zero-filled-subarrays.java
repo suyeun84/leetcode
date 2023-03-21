@@ -7,15 +7,9 @@ class Solution {
         for(int i = 0; i < nums.length; i++){
             if(nums[i] == 0){
                 length++;
-            }else{
-                for(int j = 1; j < length + 1; j++){
-                    result += j;
-                }
+                result += length;
+            }else
                 length = 0;
-            }
-        }
-        for(int j = 1; j < length + 1; j++){
-            result += j;
         }
         
         return result;
