@@ -20,10 +20,8 @@ class Solution {
         for(int i = 0; i < n; i++){
             int semi = findUnion(arr, i);
             if(root[semi]) continue;
-            else{
-                result++;
-                root[semi] = true;
-            }
+            result++;
+            root[semi] = true;
         }
 
         return result - 1;
